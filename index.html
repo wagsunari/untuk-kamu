@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>untuk kamu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Hai Cantik!</h1>
+        <img src="malu.gif" alt="malu GIF" class="center-image"/>
+        <h2>Masukkan nama kamu:</h2>
+        <input type="text" id="nameInput" placeholder="Nama Kamu" />
+        <button onclick="submitName()">Kirim</button>
+    </div>
+        <audio id="background-audio" src="yowisben.mp3" loop></audio>
+        <script>
+                    
+
+           
+        const audio = document.getElementById('background-audio');
+        audio.play();
+
+        // Memulai audio
+        audio.play();
+
+        // Simpan waktu pemutaran audio
+        audio.addEventListener('timeupdate', () => {
+            localStorage.setItem('audioTime', audio.currentTime);
+        });
+
+        // Mengatur audio saat berpindah halaman
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('audioPaused', audio.paused);
+        });
+    </script>
+        
+    <script src="java.js"></script>
+</body>
+</html>

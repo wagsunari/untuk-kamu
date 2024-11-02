@@ -1,0 +1,124 @@
+   /* css halaman satu*/
+ 
+ 
+#body1 {
+    background-image: url('https://example.com/your-background-image.jpg'); /* Ganti dengan URL gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan untuk teks */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.center-image {
+    margin-top: -20px; /* Mengangkat gambar ke atas sedikit */
+    width: 300px;
+    border-radius: 15px;
+}
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+#button1 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff69b4;
+    color: white;
+    cursor: pointer;
+}
+button1:hover {
+    background-color: #ff1493;
+}
+
+
+
+
+
+
+
+
+       /*css halaman dua*/
+body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Untuk menyembunyikan gambar yang jatuh */
+}
+h1 {
+            color: #ff69b4;
+}
+img {
+            width: 300px;
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+            z-index: 10; /* Supaya gambar tidak tertutup oleh background */
+        }
+button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 10; /* Supaya tombol tidak tertutup oleh background */
+}
+button:hover {
+            background-color: #ff1493;
+}
+.button-container {
+            position: relative;
+            z-index: 10;
+}
+.instagram-icon {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            z-index: 10;
+        }
+.instagram-icon:hover {
+            transform: scale(1.1);
+}
+
+        /* Efek gambar jatuh */
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0;
+            }
+}
+.falling-heart {
+            position: absolute;
+            width: 50px;
+            animation: fall linear infinite;
+}
+        
+        

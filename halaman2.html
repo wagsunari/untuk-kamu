@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>untuk kamu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <h1 id="greeting"></h1>
+        <h2 id="question" style="display: none;">Kamu mau gak jadi pacarku?</h2>
+        
+        <script>
+            const userName = localStorage.getItem('userName');
+            const greetingElement = document.getElementById('greeting');
+            const questionElement = document.getElementById('question');
+
+            function typeGreeting(message, index) {
+                if (index < message.length) {
+                    greetingElement.innerText += message.charAt(index);
+                    setTimeout(() => typeGreeting(message, index + 1), 100);
+                } else {
+                    questionElement.style.display = 'block';
+                }
+            }
+
+            if (userName) {
+                setTimeout(() => {
+                    typeGreeting(`Hai, ${userName}! Cantik`, 0);
+                }, 1000);
+            } else {
+                greetingElement.innerText = 'Hai, pengunjung!';
+                questionElement.style.display = 'block';
+            }
+        </script>
+    </div>
+    <img src="suka.gif" alt="suka GIF" />
+    
+    <div class="button-container">
+        <button id="btn_mau" onclick="sendWhatsApp('I LOVE YOU')">Mau</button>
+        <button id="btn_gamau" onclick="gamau(this)">Gamau</button>
+    </div>
+    
+    <a href="https://www.instagram.com/wagsunari" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="instagram-icon" />
+    </a>
+         <audio id="background-audio" src="yowisben.mp3" autoplay></audio>
+    <script>
+        function sendWhatsApp(message) {
+            const phoneNumber = '+6289526345428'; // Ganti dengan nomor WhatsApp yang diinginkan
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+        //memulai audio
+              
+        const audio = document.getElementById('background-audio');
+        
+        // Ambil waktu pemutaran dari localStorage
+        const savedTime = localStorage.getItem('audioTime');
+        if (savedTime) {
+            audio.currentTime = parseFloat(savedTime);
+        }
+        // Memulai audio
+        audio.play();
+    </script>
+    
+    <script src="java.js"></script>
+</body>
+</html>
